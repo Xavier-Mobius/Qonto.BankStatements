@@ -10,12 +10,6 @@
 *.userosscache
 *.sln.docstates
 
-# User-specific files (MonoDevelop/Xamarin Studio)
-*.userprefs
-
-# Mono auto generated files
-mono_crash.*
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -30,14 +24,6 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-
-# Visual Studio 2015/2017 cache/options directory
-.vs/
-# Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
-
-# Visual Studio 2017 auto generated files
-Generated\ Files/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -348,3 +334,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Launch file
+src/Properties/launchSettings.json
+
+# DevExpress
+src/.cr

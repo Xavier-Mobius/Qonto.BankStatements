@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobius.Qonto.BankStatements", "Mobius.Qonto.BankStatements.csproj", "{611DCF0F-447F-4578-A8EA-5544535B755E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{611DCF0F-447F-4578-A8EA-5544535B755E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611DCF0F-447F-4578-A8EA-5544535B755E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611DCF0F-447F-4578-A8EA-5544535B755E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611DCF0F-447F-4578-A8EA-5544535B755E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A8F7193-6902-4BC3-8DB5-1CC7FDC6281C}
+	EndGlobalSection
+EndGlobal
