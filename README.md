@@ -1,8 +1,10 @@
-![logo](https://github.com/Xavier-Mobius/Qonto.BankStatements/raw/main/doc/logo.png)
+<p align="center">
+  <img src="https://github.com/Xavier-Mobius/Qonto.BankStatements/raw/main/doc/logo.png" width="256" title="Qonto Logo">
+</p>
 
 # Qonto.BankStatements
 
-Retrieve bank statements from Qonto automatically
+Retrieve bank statements from Qonto automatically.
 
 ## Output
 
