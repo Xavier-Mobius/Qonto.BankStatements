@@ -340,3 +340,6 @@ src/Properties/launchSettings.json
 
 # DevExpress
 src/.cr
+
+# Solution VS directory
+src/.vs
