@@ -343,3 +343,6 @@ src/.cr
 
 # Solution VS directory
 src/.vs
+
+# Custom
+/*.bat
