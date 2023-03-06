@@ -19,6 +19,9 @@ public class Transaction
     [JsonPropertyName("amount")]
     public decimal Amount { get; set; }
 
+    [JsonPropertyName("settled_balance")]
+    public decimal SettledBalance { get; set; }
+
     [JsonPropertyName("local_amount")]
     public decimal LocalAmount { get; set; }
 
