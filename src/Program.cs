@@ -41,21 +41,31 @@ var rootCommand = new RootCommand("Mobius.Qonto.BankStatements")
     filenameOption
 };
 rootCommand.TreatUnmatchedTokensAsErrors = true;
-rootCommand.SetHandler(
-    async (string login, string secretKey, string iban, int? month, int? year, string directory, string? filename)
-        =>
-    {
-        await Main(login, secretKey, iban, month, year, directory, filename);
-        Console.WriteLine("Mobius.Qonto.BankStatements has ending");
-    },
-    loginOption, secretKeyOption, ibanOption, monthOption, yearOption, directoryOption, filenameOption);
+rootCommand.SetHandler(async (context) =>
+{
+    var token = context.GetCancellationToken();
+    await Main(context?.ParseResult?.GetValueForOption(loginOption),
+        context?.ParseResult?.GetValueForOption(secretKeyOption),
+        context?.ParseResult?.GetValueForOption(ibanOption),
+        context?.ParseResult?.GetValueForOption(monthOption),
+        context?.ParseResult?.GetValueForOption(yearOption),
+        context?.ParseResult?.GetValueForOption(directoryOption),
+        context?.ParseResult?.GetValueForOption(filenameOption),
+        token);
+    Console.WriteLine("Mobius.Qonto.BankStatements has ending");
+});
 
 return rootCommand.Invoke(args);
 #endregion
-
-static async Task Main(string login, string secreteKey, 
-    string iban, int? month, int? year,
-    string directory, string? filename)
+static async Task Main(
+    string login,
+    string secreteKey,
+    string iban,
+    int? month,
+    int? year,
+    string directory,
+    string? filename,
+    CancellationToken cancellationToken)
 {
     using var client = new QontoClient();
     client.InitializeAuthorization(login, secreteKey);
