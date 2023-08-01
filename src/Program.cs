@@ -1,4 +1,5 @@
-﻿using Mobius.Qonto.BankStatements;
+﻿using Mobius.Qonto.API;
+using Mobius.Qonto.BankStatements;
 using System.CommandLine;
 
 Console.WriteLine("Mobius.Qonto.BankStatements is running");
@@ -59,11 +60,11 @@ static async Task Main(string login, string secreteKey,
     using var client = new QontoClient();
     client.InitializeAuthorization(login, secreteKey);
     var (from, to) = GetDates(month, year);
-    var transactions = await client.GetBankStatementAsync(iban, from, to);
-    var compagnyInfo = await client.GetCompanyInfo(iban);
+    var transactions = await client.GetBankStatementAsync(iban, from, to, cancellationToken);
+    var companyInfo = await client.GetCompanyInfoAsync(iban, cancellationToken);
 
-    filename ??= $"{from:yyyy_MMMM}_{compagnyInfo.LegalName}_statements.xlsx";
-    var serializer = new StatementSerializer(compagnyInfo.LegalName, compagnyInfo.BankAccount, from, to, transactions);
+    filename ??= $"{from:yyyy_MMMM}_{companyInfo.LegalName}_statements.xlsx";
+    var serializer = new StatementSerializer(companyInfo.LegalName, companyInfo.BankAccount, from, to, transactions);
     serializer.ToExcel(Path.Combine(directory, filename));
 }
 

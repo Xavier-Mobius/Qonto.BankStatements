@@ -1,4 +1,4 @@
-﻿using Mobius.Qonto.BankStatements.Model;
+﻿using Mobius.Qonto.API.Model;
 using OfficeOpenXml;
 
 namespace Mobius.Qonto.BankStatements;
